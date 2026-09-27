@@ -36,5 +36,4 @@
 # Old Wix blog URLs
 /blog/* / 301
 
-# 404 fallback
-/* /index.html 200
+# Note: No catch-all - let Cloudflare show 404 for unknown URLs
