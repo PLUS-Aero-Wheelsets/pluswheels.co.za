@@ -9,6 +9,8 @@
 *.mp4
 *.zip
 *.txt
+!.gitignore
+!robots.txt
 .DS_Store
 .localized
 
