@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carbon MTB wheelsets hand-built in Johannesburg. XSL XCO, Trail, All-Mountain. Toray T800/T1100 carbon, Alpina spokes, PLUS OEM hubs. From R18,000.">
+    <meta name="keywords" content="carbon mtb wheelset south africa, xco wheels, trail wheels johannesburg, plus aero mtb, carbon mountain bike wheels">
+    <meta name="author" content="Plus Aero Wheelsets">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MTB Wheelsets | XSL XCO - Trail | Plus Aero">
+    <meta property="og:description" content="Carbon MTB wheelsets hand-built in Johannesburg. XSL XCO, Trail, All-Mountain. From R18,000.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pluswheels.co.za/mtb.html">
+    <meta property="og:image" content="https://www.pluswheels.co.za/mtb-hero.jpg">
+    <meta property="og:site_name" content="Plus Aero Wheelsets">
+    <title>MTB Wheelsets | XSL XCO - Trail | Plus Aero</title>
+    <style>
+:root { --orange:#FF6600; --black:#000; --dark:#080808; --mid:#111; --border:#222; --text-dim:#888; --white:#fff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--black); color:var(--white); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; overflow-x:hidden; }
+header { position:fixed; top:0; width:100%; height:70px; background:rgba(0,0,0,0.95); z-index:9999; display:flex; align-items:center; justify-content:space-between; padding:0 5%; border-bottom:1px solid var(--border); }
+.logo { font-size:22px; font-weight:900; color:var(--white); text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+.logo span { color:var(--orange); }
+nav a { color:var(--white); text-decoration:none; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; margin-left:24px; transition:color 0.2s; }
+nav a:hover { color:var(--orange); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:5px; }
+.hamburger span { display:block; width:25px; height:2px; background:var(--white); transition:0.3s; }
+.mobile-nav { display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:var(--black); z-index:10000; flex-direction:column; align-items:center; justify-content:center; gap:30px; }
+.mobile-nav.active { display:flex; }
+.mobile-nav a { color:var(--white); font-size:28px; font-weight:900; text-transform:uppercase; text-decoration:none; letter-spacing:3px; }
+.mobile-nav a:hover { color:var(--orange); }
+.close-btn { position:absolute; top:20px; right:5%; font-size:40px; cursor:pointer; color:var(--white); line-height:1; }
+.page-hero { height:56vh; width:100%; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; margin-top:70px; position:relative; }
+.page-hero::after { content:''; position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)); }
+.hero-text { position:relative; z-index:2; text-align:center; }
+.hero-text h1 { font-size:clamp(40px,8vw,90px); font-weight:900; letter-spacing:12px; text-transform:uppercase; color:var(--white); text-shadow:0 4px 20px rgba(0,0,0,0.5); }
+.hero-text p { font-size:13px; letter-spacing:4px; text-transform:uppercase; color:#ccc; margin-top:12px; }
+.tech-bar { background:var(--orange); display:flex; justify-content:space-around; padding:25px 5%; flex-wrap:wrap; gap:20px; }
+.tech-item { text-align:center; }
+.tech-item h4 { font-size:24px; font-weight:900; color:var(--white); letter-spacing:2px; }
+.tech-item p { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.8); margin-top:4px; }
+.product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:2px; padding:2px; background:var(--border); }
+.product-card { background:var(--dark); position:relative; overflow:hidden; transition:0.4s cubic-bezier(0.165,0.84,0.44,1); }
+.product-card:hover { transform:translateY(-6px); }
+.card-img { width:100%; aspect-ratio:1/1; background-color:var(--mid); background-size:cover; background-position:center; overflow:hidden; }
+.card-info { padding:28px; }
+.card-info h3 { font-size:22px; font-weight:900; text-transform:uppercase; letter-spacing:2px; color:var(--white); margin-bottom:8px; border-left:4px solid var(--orange); padding-left:12px; }
+.card-specs { font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-dim); line-height:2; margin-bottom:20px; }
+.card-specs b { color:var(--orange); }
+.price-calc { border-top:1px solid var(--border); padding-top:20px; }
+.base-price { font-size:30px; font-weight:900; color:var(--white); margin-bottom:16px; }
+.base-price span { font-size:13px; color:var(--text-dim); font-weight:400; margin-left:8px; }
+.btn-order { display:block; width:100%; background:var(--orange); color:var(--white); text-align:center; padding:14px; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:2px; text-decoration:none; margin-top:16px; transition:background 0.2s; }
+.btn-order:hover { background:var(--white); color:var(--black); }
+.btn-specs { background:transparent; border:2px solid var(--orange); color:var(--orange); }
+.btn-specs:hover { background:var(--orange); color:var(--white); }
+footer { background:var(--dark); border-top:1px solid var(--border); padding:40px 5%; text-align:center; }
+.footer-logo { font-size:20px; font-weight:900; letter-spacing:4px; text-transform:uppercase; color:var(--white); margin-bottom:12px; }
+footer p { font-size:11px; color:var(--text-dim); letter-spacing:1px; }
+@media (max-width:768px) { nav { display:none; } .hamburger { display:flex; } .page-hero { height:50vh; } .product-grid { grid-template-columns:1fr; } .tech-bar { justify-content:center; } .hero-text h1 { letter-spacing:6px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">PLUS<span>AERO</span></a>
+    <nav>
+        <a href="road.html">Road</a>
+        <a href="gravel.html">Gravel</a>
+        <a href="mtb.html">MTB</a>
+        <a href="g5silk.html">G5 Silk</a>
+        <a href="qocranks.html">QO</a>
+        <a href="components.html">Components</a>
+        <a href="workshop.html">Workshop</a>
+        <a href="support.html">Support</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mobile-nav" id="mNav">
+    <div class="close-btn" onclick="toggleMenu()">x</div>
+    <a href="road.html" onclick="toggleMenu()">Road</a>
+    <a href="gravel.html" onclick="toggleMenu()">Gravel</a>
+    <a href="mtb.html" onclick="toggleMenu()">MTB</a>
+    <a href="g5silk.html" onclick="toggleMenu()">G5 Silk</a>
+    <a href="qocranks.html" onclick="toggleMenu()">QO</a>
+    <a href="components.html" onclick="toggleMenu()">Components</a>
+    <a href="workshop.html" onclick="toggleMenu()">Workshop</a>
+    <a href="support.html" onclick="toggleMenu()">Support</a>
+</div>
+
+<section class="page-hero" style="background-image: url('mtb-hero.jpg');">
+    <div class="hero-text">
+        <h1>MTB Series</h1>
+        <p>Hand-Built Carbon Wheelsets &nbsp;&bull;&nbsp; Johannesburg</p>
+    </div>
+</section>
+
+<div class="tech-bar">
+    <div class="tech-item"><h4>CARBON WEAVE</h4><p>T800 TO T1100</p></div>
+    <div class="tech-item"><h4>SPOKES</h4><p>ALPINA</p></div>
+    <div class="tech-item"><h4>PLUS OEM HUBS</h4><p>CS180SL - RS180SL - RS240SL - GSL241SL</p></div>
+    <div class="tech-item"><h4>60T</h4><p>RATCHET UPGRADE</p></div>
+    <div class="tech-item"><h4>120KG</h4><p>RIDER WEIGHT LIMIT</p></div>
+</div>
+
+<div class="product-grid">
+    <div class="product-card">
+        <div class="card-img" style="background-image:url('xsl-xco-hero.jpg');"></div>
+        <div class="card-info">
+            <h3>XSL XCO</h3>
+            <p class="card-specs"><b>Depth:</b> 20mm &nbsp;|&nbsp; <b>Inner:</b> 36mm<br><b>Rims:</b> 285g each &nbsp;|&nbsp; <b>Spokes:</b> Alpina Extra Lite 4.4g<br><b>Lacing:</b> 28H 3-Cross &nbsp;|&nbsp; <b>Nipples:</b> Internal<br><b>Hub:</b> XSL240SL Boost 60T Ratchet (Standard)<br><b>Weight:</b> 1,160g &nbsp;|&nbsp; <b>Rider Limit:</b> 90kg &nbsp;|&nbsp; Tubeless Ready</p>
+            <div class="price-calc">
+                <div class="base-price">R18,000 <span>standard</span></div>
+                <a href="xsl-xco.html" class="btn-order btn-specs">View Full Specs</a>
+                <a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20XSL%20XCO%20wheelset" class="btn-order">Order via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="card-img" style="background-image:url('xsl-xco-hero.jpg');"></div>
+        <div class="card-info">
+            <h3>Trail / All-Mountain</h3>
+            <p class="card-specs"><b>Specs:</b> TBA &nbsp;|&nbsp; <b>Rider Limit:</b> 120kg<br>Tubeless Ready &nbsp;|&nbsp; Internal Nipples</p>
+            <div class="price-calc">
+                <div class="base-price">TBA <span>to be announced</span></div>
+                <a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20Trail%20All-Mountain%20wheelset" class="btn-order">Enquire via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-logo">Plus Aero</div>
+    <p>&copy; 2026 Plus Aero Wheelsets &nbsp;&bull;&nbsp; 983 Meadowbrook Business Estate, Olivedale, Johannesburg</p>
+    <p style="margin-top:8px;">
+        <a href="https://wa.me/27838821308" style="color:#FF6600; text-decoration:none;">WhatsApp: 083 882 1308</a>
+        &nbsp;&bull;&nbsp;
+        <a href="tel:+27101403877" style="color:#888; text-decoration:none;">010 140 3877</a>
+        &nbsp;&bull;&nbsp;
+        <a href="mailto:info@pluswheels.co.za" style="color:#888; text-decoration:none;">info@pluswheels.co.za</a>
+    </p>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('mNav').classList.toggle('active'); }
+</script>
+</body>
+</html>

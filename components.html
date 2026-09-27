@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wheel-building components by Plus Aero: Plus OEM hubs, Alpina spokes, 7075 alloy nipples, tubeless tape, tubeless valves and sealant. Supplied and built in Johannesburg.">
+<meta name="keywords" content="bicycle hubs south africa, alpina spokes, alloy nipples, tubeless tape, tubeless valves, wheel building components johannesburg, plus aero components">
+<meta name="author" content="Plus Aero Wheelsets">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Components | Hubs - Spokes - Nipples - Tubeless | Plus Aero">
+<meta property="og:description" content="Everything that goes into a hand-built wheelset: hubs, spokes, nipples, tubeless tape and valves. Johannesburg.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pluswheels.co.za/components.html">
+<meta property="og:site_name" content="Plus Aero Wheelsets">
+<title>Components | Hubs - Spokes - Nipples - Tubeless | Plus Aero</title>
+<style>
+:root{--orange:#FF6600;--black:#000000;--dark:#080808;--mid:#111111;--border:#222222;--text-dim:#888888;--white:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background-color:var(--black);color:var(--white);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden}
+header{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.95);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-sizing:border-box;border-bottom:1px solid var(--border)}
+.logo{font-size:22px;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:3px;text-transform:uppercase}
+.logo span{color:var(--orange)}
+nav a{color:var(--white);text-decoration:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-left:24px;transition:color 0.2s}
+nav a:hover{color:var(--orange)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:25px;height:2px;background:var(--white);transition:0.3s}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--black);z-index:10000;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mobile-nav.active{display:flex}
+.mobile-nav a{color:var(--white);font-size:28px;font-weight:900;text-transform:uppercase;text-decoration:none;letter-spacing:3px;transition:color 0.2s}
+.mobile-nav a:hover{color:var(--orange)}
+.close-btn{position:absolute;top:20px;right:5%;font-size:40px;cursor:pointer;color:var(--white);line-height:1}
+.page-hero{height:56vh;width:100%;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;margin-top:70px;position:relative}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6))}
+.hero-text{position:relative;z-index:2;text-align:center}
+.hero-text h1{font-size:clamp(40px,8vw,90px);font-weight:900;letter-spacing:12px;text-transform:uppercase;color:var(--white);text-shadow:0 4px 20px rgba(0,0,0,0.5)}
+.hero-text p{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#ccc;margin-top:12px}
+.tech-bar{background:var(--orange);display:flex;justify-content:space-around;padding:25px 5%;flex-wrap:wrap;gap:20px}
+.tech-item{text-align:center}
+.tech-item h4{font-size:24px;font-weight:900;color:var(--white);letter-spacing:2px}
+.tech-item p{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.8);margin-top:4px}
+.section-heading{text-align:center;padding:60px 5% 20px;background:var(--black)}
+.section-heading h2{font-size:clamp(28px,5vw,48px);font-weight:900;text-transform:uppercase;letter-spacing:6px;color:var(--white)}
+.section-heading h2 span{color:var(--orange)}
+.section-heading p{font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--text-dim);margin-top:10px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px;background:var(--border)}
+.product-card{background:var(--dark);position:relative;overflow:hidden;transition:0.4s cubic-bezier(0.165,0.84,0.44,1)}
+.product-card:hover{transform:translateY(-6px)}
+.card-img{width:100%;aspect-ratio:10/7;background-color:var(--mid);background-size:cover;background-position:center;overflow:hidden}
+.card-info{padding:28px}
+.card-info h3{font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:8px;border-left:4px solid var(--orange);padding-left:12px}
+.card-specs{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);line-height:2;margin-bottom:20px}
+.card-specs b{color:var(--orange)}
+.price-calc{border-top:1px solid var(--border);padding-top:20px}
+.base-price{font-size:30px;font-weight:900;color:var(--white);margin-bottom:16px}
+.base-price span{font-size:13px;color:var(--text-dim);font-weight:400;margin-left:8px}
+.btn-order{display:block;width:100%;background:var(--orange);color:var(--white);text-align:center;padding:14px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:16px;transition:background 0.2s}
+.btn-order:hover{background:var(--white);color:var(--black)}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 5%;text-align:center}
+.footer-logo{font-size:20px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:var(--white);margin-bottom:12px}
+footer p{font-size:11px;color:var(--text-dim);letter-spacing:1px}
+@media(max-width:1024px){.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav{display:none}.hamburger{display:flex}.page-hero{height:50vh}.product-grid{grid-template-columns:1fr}.tech-bar{justify-content:center}.hero-text h1{letter-spacing:6px}}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html" class="logo">PLUS<span>AERO</span></a>
+<nav>
+<a href="road.html">Road</a>
+<a href="gravel.html">Gravel</a>
+<a href="mtb.html">MTB</a>
+<a href="g5silk.html">G5 Silk</a>
+<a href="qocranks.html">QO</a>
+<a href="components.html">Components</a>
+<a href="workshop.html">Workshop</a>
+<a href="support.html">Support</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mobile-nav" id="mNav">
+<div class="close-btn" onclick="toggleMenu()">x</div>
+<a href="road.html" onclick="toggleMenu()">Road</a>
+<a href="gravel.html" onclick="toggleMenu()">Gravel</a>
+<a href="mtb.html" onclick="toggleMenu()">MTB</a>
+<a href="g5silk.html" onclick="toggleMenu()">G5 Silk</a>
+<a href="qocranks.html" onclick="toggleMenu()">QO</a>
+<a href="components.html" onclick="toggleMenu()">Components</a>
+<a href="workshop.html" onclick="toggleMenu()">Workshop</a>
+<a href="support.html" onclick="toggleMenu()">Support</a>
+</div>
+
+<section class="page-hero" style="background-image:url('components-hero.jpg');">
+<div class="hero-text">
+<h1>Components</h1>
+<p>Hubs &nbsp;&bull;&nbsp; Spokes &nbsp;&bull;&nbsp; Nipples &nbsp;&bull;&nbsp; Tubeless &nbsp;&bull;&nbsp; Johannesburg</p>
+</div>
+</section>
+
+<div class="tech-bar">
+<div class="tech-item"><h4>PLUS OEM</h4><p>HUB RANGE</p></div>
+<div class="tech-item"><h4>ALPINA</h4><p>SPOKES - ITALY</p></div>
+<div class="tech-item"><h4>7075</h4><p>ALLOY NIPPLES</p></div>
+<div class="tech-item"><h4>60T</h4><p>RATCHET OPTIONS</p></div>
+<div class="tech-item"><h4>BUILT BY US</h4><p>OR SUPPLIED TO YOUR BUILDER</p></div>
+</div>
+
+<div class="section-heading">
+<h2><span>Hubs</span></h2>
+<p>Plus OEM Hub Range - Road, Gravel and MTB</p>
+</div>
+
+<div class="product-grid">
+<div class="product-card">
+<div class="card-img" style="background-image:url('hub-mt032.jpg');"></div>
+<div class="card-info">
+<h3>MT032 Hub</h3>
+<p class="card-specs"><b>Tier:</b> Base &nbsp;|&nbsp; <b>Use:</b> Road - Gravel - MTB<br><b>Interface:</b> J-bend &nbsp;|&nbsp; <b>Engagement:</b> Ratchet<br><b>Upgrade:</b> 60T ratchet option available<br><b>Drilling:</b> Multiple hole counts</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>for current pricing</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20MT032%20Hub" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('hub-rs240.jpg');"></div>
+<div class="card-info">
+<h3>RS240 Hub</h3>
+<p class="card-specs"><b>Tier:</b> Mid &nbsp;|&nbsp; <b>Use:</b> Road - Gravel<br><b>Interface:</b> Straight pull &nbsp;|&nbsp; <b>Engagement:</b> Ratchet<br><b>Upgrade:</b> 60T ratchet option available<br><b>Builds:</b> RSL and GSL series</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>for current pricing</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20RS240%20Hub" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('hub-gsl241.jpg');"></div>
+<div class="card-info">
+<h3>GSL241 Hub</h3>
+<p class="card-specs"><b>Tier:</b> Mid &nbsp;|&nbsp; <b>Use:</b> Gravel<br><b>Interface:</b> Straight pull &nbsp;|&nbsp; <b>Engagement:</b> Ratchet<br><b>Upgrade:</b> 60T ratchet option available<br><b>Builds:</b> GSL series</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>for current pricing</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20GSL241%20Hub" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('hub-cs180sl.jpg');"></div>
+<div class="card-info">
+<h3>CS180SL Hub</h3>
+<p class="card-specs"><b>Tier:</b> High &nbsp;|&nbsp; <b>Use:</b> Road<br><b>Engagement:</b> 60T ratchet standard<br><b>Builds:</b> CSL and AXL series<br><b>Note:</b> Flagship road hub</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>for current pricing</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20CS180SL%20Hub" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('hub-rs180.jpg');"></div>
+<div class="card-info">
+<h3>RS180 Hub</h3>
+<p class="card-specs"><b>Tier:</b> High &nbsp;|&nbsp; <b>Use:</b> Road - Gravel<br><b>Interface:</b> Straight pull<br><b>Builds:</b> AXL 24H and premium builds<br><b>Note:</b> Top of the Plus OEM range</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>for current pricing</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20RS180%20Hub" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-heading">
+<h2><span>Spokes</span></h2>
+<p>Alpina Spokes - Hand-Build Ready</p>
+</div>
+
+<div class="product-grid">
+<div class="product-card">
+<div class="card-img" style="background-image:url('alpina-carbolite.jpg');"></div>
+<div class="card-info">
+<h3>Alpina Carbo Lite</h3>
+<p class="card-specs"><b>Type:</b> Carbon composite spoke<br><b>Use:</b> High-end road and gravel builds<br><b>Builds:</b> CSL - GSL-R<br><b>Origin:</b> Italy</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per spoke / per set</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20Alpina%20Carbo%20Lite%20spokes" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('alpina-hyperlite.jpg');"></div>
+<div class="card-info">
+<h3>Alpina Hyper Lite</h3>
+<p class="card-specs"><b>Type:</b> Lightweight steel aero<br><b>Use:</b> Road and gravel builds<br><b>Builds:</b> AXL 24H - GSL-54 - GSL-R<br><b>Origin:</b> Italy</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per spoke / per set</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20Alpina%20Hyper%20Lite%20spokes" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('alpina-extralite.jpg');"></div>
+<div class="card-info">
+<h3>Alpina Extra Lite</h3>
+<p class="card-specs"><b>Type:</b> Ultralight steel<br><b>Use:</b> Climbing and race builds<br><b>Builds:</b> RSL series - XSL XCO<br><b>Origin:</b> Italy</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per spoke / per set</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20Alpina%20Extra%20Lite%20spokes" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section-heading">
+<h2><span>Nipples &amp; Tubeless</span></h2>
+<p>The Small Parts That Finish The Build</p>
+</div>
+
+<div class="product-grid">
+<div class="product-card">
+<div class="card-img" style="background-image:url('nipples.jpg');"></div>
+<div class="card-info">
+<h3>7075 Alloy Nipples</h3>
+<p class="card-specs"><b>Type:</b> Internal hex nipple<br><b>Material:</b> 7075 aluminium<br><b>Finish:</b> Black or silver<br><b>Supply:</b> Per build or per set</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per set</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20alloy%20nipples" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('tubeless-tape.jpg');"></div>
+<div class="card-info">
+<h3>Tubeless Rim Tape</h3>
+<p class="card-specs"><b>Use:</b> Carbon rim tubeless conversion<br><b>Widths:</b> Matched to rim internal width<br><b>Supply:</b> Per roll - fitted with every Plus build<br><b>Note:</b> Fitment free with wheel purchase</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per roll</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20tubeless%20rim%20tape" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="card-img" style="background-image:url('tubeless-valves.jpg');"></div>
+<div class="card-info">
+<h3>Tubeless Valves</h3>
+<p class="card-specs"><b>Type:</b> Tubeless presta valves<br><b>Lengths:</b> Matched to rim depth<br><b>Finish:</b> Black - colour options<br><b>Supply:</b> Per pair - fitted with every Plus build</p>
+<div class="price-calc">
+<div class="base-price">Enquire <span>per pair</span></div>
+<a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20tubeless%20valves" class="btn-order">Enquire via WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="footer-logo">Plus Aero</div>
+<p>2026 Plus Aero Wheelsets &nbsp;&bull;&nbsp; 983 Meadowbrook Business Estate, Olivedale, Johannesburg</p>
+<p style="margin-top:8px;">
+<a href="https://wa.me/27838821308" style="color:#FF6600;text-decoration:none;">WhatsApp: 083 882 1308</a>
+&nbsp;&bull;&nbsp;
+<a href="tel:+27101403877" style="color:#888;text-decoration:none;">010 140 3877</a>
+&nbsp;&bull;&nbsp;
+<a href="mailto:info@pluswheels.co.za" style="color:#888;text-decoration:none;">info@pluswheels.co.za</a>
+</p>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mNav').classList.toggle('active')}
+</script>
+
+</body>
+</html>
