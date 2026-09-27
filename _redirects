@@ -1,0 +1,40 @@
+# Plus Aero — Cloudflare Pages redirects
+# Converted from .htaccess
+
+# Old extension-less category URLs
+/road /road.html 301
+/road-1 /road.html 301
+/gravel /gravel.html 301
+/gravel-1 /gravel.html 301
+/mtb /mtb.html 301
+/mtb-1 /mtb.html 301
+/goblin /goblin.html 301
+/goblin-1 /goblin.html 301
+/components /components.html 301
+/components-1 /components.html 301
+/workshop /workshop.html 301
+/workshop-1 /workshop.html 301
+/support /support.html 301
+/contact /support.html 301
+/contact-us /support.html 301
+/about / 301
+/about-us / 301
+/qo /qocranks.html 301
+/qo-cranks /qocranks.html 301
+/qocranks /qocranks.html 301
+/basement-983 /basement983.html 301
+/basement983 /basement983.html 301
+
+# Old Wix shop/category shells
+/shop/* / 301
+/category/* / 301
+
+# Discontinued product
+/vsl-40 /road.html 301
+/vsl40 /road.html 301
+
+# Old Wix blog URLs
+/blog/* / 301
+
+# 404 fallback
+/* /index.html 200

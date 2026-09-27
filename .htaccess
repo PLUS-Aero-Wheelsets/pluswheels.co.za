@@ -1,0 +1,57 @@
+# ============================================================
+# PLUS AERO WHEELSETS — pluswheels.co.za
+# Original .htaccess from Xneelo/Konsoleh hosting
+# Kept for reference — Cloudflare Pages uses _redirects instead
+# ============================================================
+RewriteEngine On
+
+# --- Kill launch subdomain ---
+RewriteCond %{HTTP_HOST} ^launch\.pluswheels\.co\.za [NC]
+RewriteRule ^(.*)$ https://pluswheels.co.za/$1 [L,R=301]
+
+# --- Force HTTPS + non-www ---
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://pluswheels.co.za%{REQUEST_URI} [L,R=301]
+
+# --- Custom 404 page ---
+ErrorDocument 404 /404.html
+
+# ============================================================
+# 301 REDIRECTS — old indexed URLs -> live pages
+# ============================================================
+
+RedirectMatch 301 ^/road(-1)?/?$ https://pluswheels.co.za/road.html
+RedirectMatch 301 ^/gravel(-1)?/?$ https://pluswheels.co.za/gravel.html
+RedirectMatch 301 ^/mtb(-1)?/?$ https://pluswheels.co.za/mtb.html
+RedirectMatch 301 ^/goblin(-1)?/?$ https://pluswheels.co.za/goblin.html
+RedirectMatch 301 ^/components(-1)?/?$ https://pluswheels.co.za/components.html
+RedirectMatch 301 ^/workshop(-1)?/?$ https://pluswheels.co.za/workshop.html
+RedirectMatch 301 ^/support/?$ https://pluswheels.co.za/support.html
+RedirectMatch 301 ^/contact(-us)?/?$ https://pluswheels.co.za/support.html
+RedirectMatch 301 ^/about(-us)?/?$ https://pluswheels.co.za/
+RedirectMatch 301 ^/qo(-cranks|cranks)?/?$ https://pluswheels.co.za/qocranks.html
+RedirectMatch 301 ^/basement(-)?983/?$ https://pluswheels.co.za/basement983.html
+
+# Old Wix product pages
+RedirectMatch 301 (?i)^/product-page/.*(gsl|grava).* https://pluswheels.co.za/gravel.html
+RedirectMatch 301 (?i)^/product-page/.*(xsl|esl|xco).* https://pluswheels.co.za/mtb.html
+RedirectMatch 301 (?i)^/product-page/.*(qo|crank).* https://pluswheels.co.za/qocranks.html
+RedirectMatch 301 (?i)^/product-page/.*(axl.?20).* https://pluswheels.co.za/axl-20.html
+RedirectMatch 301 (?i)^/product-page/.*(axl.?24).* https://pluswheels.co.za/axl-24.html
+RedirectMatch 301 (?i)^/product-page/.*(csl).* https://pluswheels.co.za/csl.html
+RedirectMatch 301 (?i)^/product-page/.*(rsl|vsl|axl|aero).* https://pluswheels.co.za/road.html
+RedirectMatch 301 ^/product-page/ https://pluswheels.co.za/road.html
+
+# Old Wix shop/category shells
+RedirectMatch 301 ^/shop/?.* https://pluswheels.co.za/
+RedirectMatch 301 ^/category/.* https://pluswheels.co.za/
+
+# Discontinued product
+RedirectMatch 301 (?i)^/(vsl-?40)(\.html)?/?$ https://pluswheels.co.za/road.html
+
+# Old Wix blog URLs
+RedirectMatch 301 (?i)^/blog/.*(gravel|goblin|grava).* https://pluswheels.co.za/gravel.html
+RedirectMatch 301 (?i)^/blog/.*(mtb|xco|trail).* https://pluswheels.co.za/mtb.html
+RedirectMatch 301 (?i)^/blog/.*(qo|crank).* https://pluswheels.co.za/qocranks.html
+RedirectMatch 301 ^/blog/?.* https://pluswheels.co.za/
