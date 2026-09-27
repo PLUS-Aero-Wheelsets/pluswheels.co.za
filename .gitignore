@@ -1,0 +1,18 @@
+# Non-website files
+*.pdf
+*.pages
+*.numbers
+*.xlsx
+*.docx
+*.psd
+*.ai
+*.mp4
+*.zip
+*.txt
+.DS_Store
+.localized
+
+# Directories not needed for deployment
+QO IMAGES/
+g5 silk/
+IMAGES WEB/
