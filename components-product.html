@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Plus Aero Wheelsets">
+<title>Product Details | Components | Plus Aero</title>
+<style>
+:root{--orange:#FF6600;--black:#000000;--dark:#080808;--mid:#111111;--border:#222222;--text-dim:#888888;--white:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background-color:var(--black);color:var(--white);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden}
+header{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.95);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-sizing:border-box;border-bottom:1px solid var(--border)}
+.logo{font-size:22px;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:3px;text-transform:uppercase}
+.logo span{color:var(--orange)}
+nav a{color:var(--white);text-decoration:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-left:24px;transition:color 0.2s}
+nav a:hover{color:var(--orange)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:25px;height:2px;background:var(--white);transition:0.3s}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--black);z-index:10000;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mobile-nav.active{display:flex}
+.mobile-nav a{color:var(--white);font-size:28px;font-weight:900;text-transform:uppercase;text-decoration:none;letter-spacing:3px}
+.mobile-nav a:hover{color:var(--orange)}
+.close-btn{position:absolute;top:20px;right:5%;font-size:40px;cursor:pointer;color:var(--white);line-height:1}
+.detail-wrap{margin-top:70px;padding:60px 5%;max-width:1200px;margin-left:auto;margin-right:auto}
+.breadcrumb{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-dim);margin-bottom:40px}
+.breadcrumb a{color:var(--orange);text-decoration:none}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.detail-img{width:100%;aspect-ratio:1/1;background-color:var(--mid);background-size:cover;background-position:center;border:1px solid var(--border)}
+.detail-info h1{font-size:clamp(26px,4vw,42px);font-weight:900;text-transform:uppercase;letter-spacing:3px;color:var(--white);border-left:4px solid var(--orange);padding-left:16px;line-height:1.2}
+.detail-cat{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--orange);margin-top:12px;padding-left:20px}
+.detail-price{font-size:34px;font-weight:900;color:var(--white);margin:30px 0 6px}
+.detail-price span{font-size:13px;color:var(--text-dim);font-weight:400;margin-left:8px}
+.detail-specs{margin-top:30px;border-top:1px solid var(--border);padding-top:30px}
+.detail-specs h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-dim);margin-bottom:16px}
+.spec-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:12px}
+.spec-row span{color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px}
+.spec-row b{color:var(--white);font-weight:700;text-align:right}
+.btn-order{display:block;width:100%;background:var(--orange);color:var(--white);text-align:center;padding:16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:30px;transition:background 0.2s}
+.btn-order:hover{background:var(--white);color:var(--black)}
+.btn-back{display:block;width:100%;background:transparent;border:2px solid var(--orange);color:var(--orange);text-align:center;padding:14px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:12px;transition:background 0.2s}
+.btn-back:hover{background:var(--orange);color:var(--white)}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 5%;text-align:center}
+.footer-logo{font-size:20px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:var(--white);margin-bottom:12px}
+footer p{font-size:11px;color:var(--text-dim);letter-spacing:1px}
+@media(max-width:768px){nav{display:none}.hamburger{display:flex}.detail-grid{grid-template-columns:1fr}.mobile-nav a{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html" class="logo">PLUS<span>AERO</span></a>
+<nav>
+<a href="road.html">Road</a>
+<a href="gravel.html">Gravel</a>
+<a href="mtb.html">MTB</a>
+<a href="g5silk.html">G5 Silk</a>
+<a href="qocranks.html">QO</a>
+<a href="components.html">Components</a>
+<a href="workshop.html">Workshop</a>
+<a href="support.html">Support</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mobile-nav" id="mNav">
+<div class="close-btn" onclick="toggleMenu()">x</div>
+<a href="road.html" onclick="toggleMenu()">Road</a>
+<a href="gravel.html" onclick="toggleMenu()">Gravel</a>
+<a href="mtb.html" onclick="toggleMenu()">MTB</a>
+<a href="g5silk.html" onclick="toggleMenu()">G5 Silk</a>
+<a href="qocranks.html" onclick="toggleMenu()">QO</a>
+<a href="components.html" onclick="toggleMenu()">Components</a>
+<a href="workshop.html" onclick="toggleMenu()">Workshop</a>
+<a href="support.html" onclick="toggleMenu()">Support</a>
+</div>
+
+<div class="detail-wrap">
+<div class="breadcrumb"><a href="components.html">Components</a> &nbsp;/&nbsp; <span id="bc-name">Product</span></div>
+<div class="detail-grid">
+<div class="detail-img" id="p-img"></div>
+<div class="detail-info">
+<h1 id="p-name">Loading...</h1>
+<div class="detail-cat" id="p-cat"></div>
+<div class="detail-price" id="p-price"></div>
+<div class="detail-specs">
+<h4>Specifications</h4>
+<div class="spec-row" id="row-type"><span>Type</span><b id="p-type"></b></div>
+<div class="spec-row"><span>Supply</span><b>Plus Aero - Johannesburg</b></div>
+<div class="spec-row"><span>Fitting</span><b>Workshop fitting available - Basement 983</b></div>
+<div class="spec-row"><span>Full spec sheet</span><b>On request via WhatsApp</b></div>
+</div>
+<a id="p-wa" class="btn-order" href="#">Enquire via WhatsApp</a>
+<a href="components.html" class="btn-back">Back to Components</a>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="footer-logo">Plus Aero</div>
+<p>2026 Plus Aero Wheelsets &nbsp;&bull;&nbsp; 983 Meadowbrook Business Estate, Olivedale, Johannesburg</p>
+<p style="margin-top:8px;">
+<a href="https://wa.me/27838821308" style="color:#FF6600;text-decoration:none;">WhatsApp: 083 882 1308</a>
+&nbsp;&bull;&nbsp;
+<a href="tel:+27101403877" style="color:#888;text-decoration:none;">010 140 3877</a>
+&nbsp;&bull;&nbsp;
+<a href="mailto:info@pluswheels.co.za" style="color:#888;text-decoration:none;">info@pluswheels.co.za</a>
+</p>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mNav').classList.toggle('active')}
+var PRODUCTS = {
+ "hub-rs240":{name:"RS240 Hub",cat:"Hub - Road / Gravel",price:"Enquire for pricing",type:"Straight pull ratchet hub",img:"hub-rs240.jpg"},
+ "hub-cs180":{name:"CS180SL Hub",cat:"Hub - Road / Gravel",price:"Enquire for pricing",type:"60T ratchet hub",img:"hub-cs180sl.jpg"},
+ "hub-gsl241":{name:"GSL241 Hub",cat:"Hub - Gravel",price:"Enquire for pricing",type:"Straight pull ratchet hub",img:"hub-gsl241.jpg"},
+ "hub-mt032":{name:"MT032 Hub",cat:"Hub - Road / Gravel / MTB",price:"Enquire for pricing",type:"J-bend ratchet hub",img:"hub-mt032.jpg"},
+ "hub-rs180":{name:"RS180 Hub",cat:"Hub - Road / Gravel",price:"Enquire for pricing",type:"Straight pull hub",img:"hub-rs180.jpg"},
+ "alpina-carbolite":{name:"Alpina Carbo Lite",cat:"Spoke - Carbon composite",price:"Enquire for pricing",type:"Carbon composite spoke",img:"alpina-carbolite.jpg"},
+ "alpina-hyperlite":{name:"Alpina Hyper Lite",cat:"Spoke - Lightweight steel aero",price:"Enquire for pricing",type:"Lightweight steel aero spoke",img:"alpina-hyperlite.jpg"},
+ "alpina-extralite":{name:"Alpina Extra Lite",cat:"Spoke - Ultralight steel",price:"Enquire for pricing",type:"Ultralight steel spoke",img:"alpina-extralite.jpg"}
+};
+var slug = new URLSearchParams(window.location.search).get('product');
+var p = PRODUCTS[slug] || PRODUCTS['hub-rs240'];
+document.getElementById('bc-name').textContent = p.name;
+document.getElementById('p-name').textContent = p.name;
+document.getElementById('p-cat').textContent = p.cat;
+document.getElementById('p-type').textContent = p.type;
+document.getElementById('p-price').innerHTML = p.price + '<span>incl. VAT where applicable</span>';
+document.getElementById('p-img').style.backgroundImage = "url('" + p.img + "')";
+document.getElementById('p-wa').href = 'https://wa.me/27838821308?text=' + encodeURIComponent("Hi, I'm interested in the " + p.name);
+document.title = p.name + ' | Components | Plus Aero';
+</script>
+
+</body>
+</html>

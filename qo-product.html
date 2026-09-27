@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Plus Aero Wheelsets">
+<title>Product Details | QO Bike Gear | Plus Aero</title>
+<style>
+:root{--orange:#FF6600;--black:#000000;--dark:#080808;--mid:#111111;--border:#222222;--text-dim:#888888;--white:#ffffff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background-color:var(--black);color:var(--white);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden}
+header{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.95);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-sizing:border-box;border-bottom:1px solid var(--border)}
+.logo{font-size:22px;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:3px;text-transform:uppercase}
+.logo span{color:var(--orange)}
+nav a{color:var(--white);text-decoration:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-left:24px;transition:color 0.2s}
+nav a:hover{color:var(--orange)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:25px;height:2px;background:var(--white);transition:0.3s}
+.mobile-nav{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--black);z-index:10000;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mobile-nav.active{display:flex}
+.mobile-nav a{color:var(--white);font-size:28px;font-weight:900;text-transform:uppercase;text-decoration:none;letter-spacing:3px}
+.mobile-nav a:hover{color:var(--orange)}
+.close-btn{position:absolute;top:20px;right:5%;font-size:40px;cursor:pointer;color:var(--white);line-height:1}
+.detail-wrap{margin-top:70px;padding:60px 5%;max-width:1200px;margin-left:auto;margin-right:auto}
+.breadcrumb{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-dim);margin-bottom:40px}
+.breadcrumb a{color:var(--orange);text-decoration:none}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.detail-img{width:100%;aspect-ratio:1/1;background-color:var(--mid);background-size:contain;background-position:center;background-repeat:no-repeat;border:1px solid var(--border)}
+.detail-info h1{font-size:clamp(26px,4vw,42px);font-weight:900;text-transform:uppercase;letter-spacing:3px;color:var(--white);border-left:4px solid var(--orange);padding-left:16px;line-height:1.2}
+.detail-cat{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--orange);margin-top:12px;padding-left:20px}
+.detail-price{font-size:34px;font-weight:900;color:var(--white);margin:30px 0 6px}
+.detail-price span{font-size:13px;color:var(--text-dim);font-weight:400;margin-left:8px}
+.detail-specs{margin-top:30px;border-top:1px solid var(--border);padding-top:30px}
+.detail-specs h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-dim);margin-bottom:16px}
+.spec-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:12px}
+.spec-row span{color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px}
+.spec-row b{color:var(--white);font-weight:700;text-align:right}
+.btn-order{display:block;width:100%;background:var(--orange);color:var(--white);text-align:center;padding:16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:30px;transition:background 0.2s}
+.btn-order:hover{background:var(--white);color:var(--black)}
+.btn-back{display:block;width:100%;background:transparent;border:2px solid var(--orange);color:var(--orange);text-align:center;padding:14px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:12px;transition:background 0.2s}
+.btn-back:hover{background:var(--orange);color:var(--white)}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 5%;text-align:center}
+.footer-logo{font-size:20px;font-weight:900;letter-spacing:4px;text-transform:uppercase;color:var(--white);margin-bottom:12px}
+footer p{font-size:11px;color:var(--text-dim);letter-spacing:1px}
+@media(max-width:768px){nav{display:none}.hamburger{display:flex}.detail-grid{grid-template-columns:1fr}.mobile-nav a{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html" class="logo">PLUS<span>AERO</span></a>
+<nav>
+<a href="road.html">Road</a>
+<a href="gravel.html">Gravel</a>
+<a href="mtb.html">MTB</a>
+<a href="g5silk.html">G5 Silk</a>
+<a href="qocranks.html">QO</a>
+<a href="components.html">Components</a>
+<a href="workshop.html">Workshop</a>
+<a href="support.html">Support</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mobile-nav" id="mNav">
+<div class="close-btn" onclick="toggleMenu()">x</div>
+<a href="road.html" onclick="toggleMenu()">Road</a>
+<a href="gravel.html" onclick="toggleMenu()">Gravel</a>
+<a href="mtb.html" onclick="toggleMenu()">MTB</a>
+<a href="g5silk.html" onclick="toggleMenu()">G5 Silk</a>
+<a href="qocranks.html" onclick="toggleMenu()">QO</a>
+<a href="components.html" onclick="toggleMenu()">Components</a>
+<a href="workshop.html" onclick="toggleMenu()">Workshop</a>
+<a href="support.html" onclick="toggleMenu()">Support</a>
+</div>
+
+<div class="detail-wrap">
+<div class="breadcrumb"><a href="qocranks.html">QO Cranks</a> &nbsp;/&nbsp; <span id="bc-name">Product</span></div>
+<div class="detail-grid">
+<div class="detail-img" id="p-img"></div>
+<div class="detail-info">
+<h1 id="p-name">Loading...</h1>
+<div class="detail-cat" id="p-cat"></div>
+<div class="detail-price" id="p-price"></div>
+<div class="detail-specs">
+<h4>Specifications</h4>
+<div class="spec-row"><span>Brand</span><b>QO Bike Gear - Spain</b></div>
+<div class="spec-row" id="row-type"><span>Type</span><b id="p-type"></b></div>
+<div class="spec-row"><span>Warranty</span><b>3 years - manufacturing defects</b></div>
+<div class="spec-row"><span>Distribution</span><b>Exclusive - Plus Aero (South Africa)</b></div>
+<div class="spec-row"><span>Availability</span><b>Ex stock or 2-3 week order</b></div>
+<div class="spec-row"><span>Full spec sheet</span><b>On request via WhatsApp</b></div>
+</div>
+<a id="p-wa" class="btn-order" href="#">Enquire via WhatsApp</a>
+<a href="qocranks.html" class="btn-back">Back to QO Cranks</a>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="footer-logo">Plus Aero</div>
+<p>2026 Plus Aero Wheelsets &nbsp;&bull;&nbsp; 983 Meadowbrook Business Estate, Olivedale, Johannesburg</p>
+<p style="margin-top:8px;">
+<a href="https://wa.me/27838821308" style="color:#FF6600;text-decoration:none;">WhatsApp: 083 882 1308</a>
+&nbsp;&bull;&nbsp;
+<a href="tel:+27101403877" style="color:#888;text-decoration:none;">010 140 3877</a>
+&nbsp;&bull;&nbsp;
+<a href="mailto:info@pluswheels.co.za" style="color:#888;text-decoration:none;">info@pluswheels.co.za</a>
+</p>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mNav').classList.toggle('active')}
+var PRODUCTS = {
+ "race-black":{name:"QO RACE Aero Carbon Crankset - Black",cat:"Road - Complete crankset",price:"R12,600",type:"Complete carbon crankset",img:"https://qobike.com/cdn/shop/files/QO-RACE-road-complete-crankset_028a359a-1fec-4b1d-8278-0e873e7b723a.jpg?v=1751186165&width=800"},
+ "race-white":{name:"QO RACE Aero Carbon Crankset - White",cat:"Road - Complete crankset",price:"R12,600",type:"Complete carbon crankset",img:"https://qobike.com/cdn/shop/files/QO-RACE-white-road-complete-crankset.jpg?v=1751186137&width=800"},
+ "grava-complete":{name:"QO GRAVA Carbon Crankset",cat:"Gravel - Complete crankset",price:"R11,400",type:"Complete carbon crankset",img:"https://qobike.com/cdn/shop/files/QO-GRAVA-gravel-complete-crankset.jpg?v=1751186133&width=800"},
+ "rocks-complete":{name:"QO ROCKS Carbon Crankset",cat:"MTB - Complete crankset",price:"R10,300",type:"Complete carbon crankset",img:"https://qobike.com/cdn/shop/files/QO-ROCKS-mtb-complete-crankset.jpg?v=1751186130&width=800"},
+ "race-cranks":{name:"QO RACE Road Cranks & Spindle",cat:"Road - Cranks and spindle",price:"R8,000",type:"Cranks and spindle",img:"https://qobike.com/cdn/shop/files/QO-RACE-road-crankset.jpg?v=1751186171&width=800"},
+ "grava-cranks":{name:"QO GRAVA Gravel Cranks & Spindle",cat:"Gravel - Cranks and spindle",price:"R8,000",type:"Cranks and spindle",img:"https://qobike.com/cdn/shop/files/QO-GRAVA-gravel-crankset.jpg?v=1751186175&width=800"},
+ "rocks-cranks":{name:"QO ROCKS MTB Cranks & Spindle",cat:"MTB - Cranks and spindle",price:"R8,500",type:"Cranks and spindle",img:"https://qobike.com/cdn/shop/files/QO-ROCKS-mtb-crankset.jpg?v=1751186161&width=800"},
+ "race-outer":{name:"QO RACE Outer Aero Chainring",cat:"Road - Chainring",price:"R2,200",type:"Chainring",img:"https://qobike.com/cdn/shop/files/QO-RACE-road-OutterChainring.jpg?v=1751186166&width=800"},
+ "race-inner":{name:"QO RACE Inner Chainring",cat:"Road - Chainring",price:"R1,100",type:"Chainring",img:"https://qobike.com/cdn/shop/files/QO-RACE-road-InnerChainring.jpg?v=1751186163&width=800"},
+ "grava-ring":{name:"QO GRAVA Chainring",cat:"Gravel - Chainring",price:"R2,700",type:"Chainring",img:"https://qobike.com/cdn/shop/files/QO-GRAVA-gravel-Chainring42t.jpg?v=1751186159&width=800"},
+ "rocks-ring":{name:"QO ROCKS Chainring",cat:"MTB - Chainring",price:"R1,800",type:"Chainring",img:"https://qobike.com/cdn/shop/files/QO-ROCKS-mtb-Chainring34t.jpg?v=1751186157&width=800"},
+ "race-spider":{name:"QO RACE Aero Spider",cat:"Road - Spider",price:"R1,100",type:"Crank spider",img:"https://qobike.com/cdn/shop/files/QO-RACE-road-spider.jpg?v=1751186168&width=800"},
+ "bolt-set":{name:"QO RACE Chainring Bolt Set",cat:"Road - Accessory",price:"Enquire for pricing",type:"Chainring bolt set",img:"https://qobike.com/cdn/shop/files/QO-RACE-bolt-set.jpg?v=1768985647&width=800"}
+};
+var slug = new URLSearchParams(window.location.search).get('product');
+var p = PRODUCTS[slug] || PRODUCTS['race-black'];
+document.getElementById('bc-name').textContent = p.name;
+document.getElementById('p-name').textContent = p.name;
+document.getElementById('p-cat').textContent = p.cat;
+document.getElementById('p-type').textContent = p.type;
+document.getElementById('p-price').innerHTML = p.price + '<span>incl. VAT where applicable</span>';
+document.getElementById('p-img').style.backgroundImage = "url('" + p.img + "')";
+document.getElementById('p-wa').href = 'https://wa.me/27838821308?text=' + encodeURIComponent("Hi, I'm interested in the " + p.name);
+document.title = p.name + ' | QO Bike Gear | Plus Aero';
+</script>
+
+</body>
+</html>
