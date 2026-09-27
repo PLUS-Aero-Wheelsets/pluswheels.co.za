@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL MTB Wheelset | Plus Aero Wheelsets</title>
+    <link rel="stylesheet" href="plus.css">
+    <style>
+        .detail-wrap{max-width:1200px;margin:0 auto;padding:60px 5% 80px}
+        .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+        .gallery{position:sticky;top:90px}
+        .main-image{width:100%;aspect-ratio:1/1;background:#fff;border:2px solid #FF6600;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .main-image img{width:100%;height:100%;object-fit:contain;transition:opacity 0.25s ease}
+        .main-image img.fade{opacity:0}
+        .thumb-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+        .thumb{aspect-ratio:1/1;background:#fff;border:2px solid #e0e0e0;cursor:pointer;overflow:hidden;transition:border-color 0.2s}
+        .thumb.active,.thumb:hover{border-color:#FF6600}
+        .thumb img{width:100%;height:100%;object-fit:contain;display:block;padding:6px}
+        .product-info{padding-top:8px}
+        .product-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#FF6600;margin-bottom:10px}
+        .product-title{font-size:clamp(32px,4vw,48px);font-weight:900;text-transform:uppercase;letter-spacing:4px;color:#111;line-height:1.05;margin-bottom:24px}
+        .product-title span{color:#FF6600}
+        .variant-section{margin-bottom:24px}
+        .variant-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:10px}
+        .colour-toggle{display:flex;gap:10px;margin-bottom:0}
+        .colour-btn{flex:1;padding:10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;border:2px solid #ccc;background:transparent;color:#999;transition:0.2s}
+        .colour-btn.active{border-color:#FF6600;color:#FF6600}
+        .price-block{border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:24px 0;margin:24px 0}
+        .price-main{font-size:42px;font-weight:900;color:#111;line-height:1;margin-bottom:4px}
+        .price-sub{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1.5px}
+        .upgrades-section{margin-bottom:24px}
+        .upgrades-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:12px}
+        .upgrade-option{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0;cursor:pointer}
+        .upgrade-option input[type="checkbox"]{width:18px;height:18px;accent-color:#FF6600;cursor:pointer;flex-shrink:0}
+        .upgrade-option label{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#444;cursor:pointer;flex:1}
+        .upgrade-price{font-size:13px;font-weight:700;color:#FF6600}
+        .total-row{display:flex;justify-content:space-between;align-items:center;padding:20px 0 0}
+        .total-label{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#888}
+        .total-price{font-size:32px;font-weight:900;color:#FF6600}
+        .btn-order{display:block;width:100%;background:#FF6600;color:#fff;text-align:center;padding:18px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2.5px;text-decoration:none;margin-top:20px;transition:background 0.2s}
+        .btn-order:hover{background:#000}
+        .btn-enquire{display:block;width:100%;background:transparent;color:#111;text-align:center;padding:14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:10px;border:2px solid #111;transition:0.2s}
+        .btn-enquire:hover{background:#111;color:#fff}
+        .tabs-section{margin-top:80px;border-top:2px solid #FF6600}
+        .tab-nav{display:flex;border-bottom:1px solid #e0e0e0;margin-bottom:40px}
+        .tab-btn{padding:16px 24px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#888;cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-1px;transition:0.2s}
+        .tab-btn.active,.tab-btn:hover{color:#FF6600}
+        .tab-btn.active{border-bottom-color:#FF6600}
+        .tab-panel{display:none}
+        .tab-panel.active{display:block}
+        .specs-table{width:100%;border-collapse:collapse}
+        .specs-table tr{border-bottom:1px solid #f0f0f0}
+        .specs-table td{padding:14px 0;font-size:13px;vertical-align:top}
+        .specs-table td:first-child{font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:10px;color:#888;width:40%}
+        .specs-table td:last-child{color:#111;font-weight:600}
+        .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+        .tech-block{border-left:3px solid #FF6600;padding-left:20px}
+        .tech-block h4{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#111;margin-bottom:8px}
+        .tech-block p{font-size:13px;color:#555;line-height:1.7}
+        @media(max-width:768px){.detail-grid{grid-template-columns:1fr;gap:32px}.gallery{position:static}.product-title{font-size:32px}.tab-btn{padding:12px 14px;font-size:10px;letter-spacing:1px}.tabs-section{margin-top:48px}}
+    </style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="logo">PLUS<span>AERO</span></a>
+    <nav>
+        <a href="road.html">Road</a><a href="gravel.html">Gravel</a><a href="mtb.html">MTB</a>
+        <a href="qocranks.html">QO</a>
+        <a href="components.html">Components</a><a href="workshop.html">Workshop</a>
+        <a href="basement983.html">983</a><a href="support.html">Support</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mNav">
+    <div class="close-btn" onclick="toggleMenu()">&times;</div>
+    <a href="road.html" onclick="toggleMenu()">Road</a><a href="gravel.html" onclick="toggleMenu()">Gravel</a>
+    <a href="mtb.html" onclick="toggleMenu()">MTB</a>
+    <a href="qocranks.html" onclick="toggleMenu()">QO Cranks</a><a href="components.html" onclick="toggleMenu()">Components</a>
+    <a href="workshop.html" onclick="toggleMenu()">Workshop</a><a href="basement983.html" onclick="toggleMenu()">983</a>
+    <a href="support.html" onclick="toggleMenu()">Support</a>
+</div>
+<div style="margin-top:70px;padding:16px 5%;background:#f5f5f5;border-bottom:1px solid #e0e0e0;">
+    <p style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1.5px;">
+        <a href="index.html" style="color:#888;text-decoration:none;">Home</a> &nbsp;/&nbsp;
+        <a href="mtb.html" style="color:#888;text-decoration:none;">MTB</a> &nbsp;/&nbsp;
+        <span style="color:#FF6600;">ESL</span>
+    </p>
+</div>
+<div style="background:#f5f5f5;padding-bottom:60px;">
+<div class="detail-wrap">
+<div class="detail-grid">
+    <div class="gallery">
+        <div class="main-image"><img src="esl-white.jpg" alt="ESL" id="mainImg"></div>
+        <div class="thumb-strip">
+            <div class="thumb active" onclick="setImage('esl-white.jpg',this)"><img src="esl-white.jpg" alt="Pair shot"></div>
+            <div class="thumb" onclick="setImage('esl-detail.jpg',this)"><img src="esl-detail.jpg" alt="Hub detail"></div>
+            <div class="thumb" onclick="setImage('esl-spoke.jpg',this)"><img src="esl-spoke.jpg" alt="Spoke detail"></div>
+            <div class="thumb" onclick="setImage('esl-lifestyle.jpg',this)"><img src="esl-lifestyle.jpg" alt="On bike"></div>
+        </div>
+    </div>
+    <div class="product-info">
+        <p class="product-label">MTB Series &nbsp;&bull;&nbsp; Disc Centre-Lock</p>
+        <h1 class="product-title">ESL<br><span>MTB</span></h1>
+        <div class="variant-section">
+            <p class="variant-label">Branding Colour</p>
+            <div class="colour-toggle">
+                <button class="colour-btn active" onclick="switchVariant('white',this)">White Branding</button>
+                <button class="colour-btn" onclick="switchVariant('black',this)">Black Branding</button>
+            </div>
+        </div>
+        <div class="price-block">
+            <div class="price-main">R16,500</div>
+            <div class="price-sub">Base price &nbsp;&bull;&nbsp; Pair</div>
+        </div>
+        <div class="upgrades-section">
+            <p class="upgrades-label">Hub Upgrades</p>
+            
+            <p style="font-size:11px;color:#999;text-transform:uppercase;letter-spacing:1px;">No upgrades available on this model</p>
+            <div class="total-row">
+                <span class="total-label">Your Total</span>
+                <span class="total-price" id="detailTotal">R16,500</span>
+            </div>
+        </div>
+        <a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20ESL%20MTB%20wheelset" class="btn-order">Order via WhatsApp</a>
+        <a href="tel:+27101403877" class="btn-enquire">Call Us &nbsp;&bull;&nbsp; 010 140 3877</a>
+        <p style="font-size:11px;color:#888;text-align:center;margin-top:16px;letter-spacing:1px;text-transform:uppercase;">Hand-built in Johannesburg &nbsp;&bull;&nbsp; 120kg Rider Limit &nbsp;&bull;&nbsp; Tubeless Ready</p>
+    </div>
+</div>
+<div class="tabs-section">
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('specs',this)">Specifications</button>
+        <button class="tab-btn" onclick="switchTab('tech',this)">Technology</button>
+        <button class="tab-btn" onclick="switchTab('compat',this)">Compatibility</button>
+    </div>
+    <div class="tab-panel active" id="tab-specs">
+        <table class="specs-table"><tr><td>Spokes</td><td>32H J-Bend</td></tr><tr><td>Hub</td><td>6-Pawl 3-Tooth PLUS Hub</td></tr><tr><td>Brake</td><td>Disc Centre-Lock</td></tr><tr><td>Tubeless</td><td>Ready &mdash; tape &amp; valves included</td></tr><tr><td>Max Rider Weight</td><td>120kg</td></tr><tr><td>Branding Options</td><td>White or Black</td></tr><tr><td>Build</td><td>Hand-built, Johannesburg</td></tr><tr><td>Warranty</td><td>Lifetime structural</td></tr></table>
+    </div>
+    <div class="tab-panel" id="tab-tech">
+        <div class="tech-grid">
+            <div class="tech-block"><h4>Toray T1100 Carbon</h4><p>Aerospace-grade fibre delivering higher tensile strength and modulus than standard carbon. The rim holds its shape under the hardest sprinting and braking loads.</p></div>
+            <div class="tech-block"><h4>Sapim CX-Ray Spokes</h4><p>Bladed and butted for minimum drag. Cold-forged, not machined &mdash; exceptional fatigue resistance over thousands of kilometres.</p></div>
+            <div class="tech-block"><h4>PLUS Hub System</h4><p>Precision-machined aluminium flanges, sealed bearings, and a robust ratchet system. Optional 60T Conical Ratchet for faster, more positive engagement.</p></div>
+            <div class="tech-block"><h4>Tubeless Ready</h4><p>Hooked bead, sealed rim bed, pre-installed tape and valves. Compatible with all major tubeless tyre systems. Set up in under 20 minutes with a track pump.</p></div>
+            <div class="tech-block"><h4>Hand-Built in Johannesburg</h4><p>Every wheelset tension-checked spoke-by-spoke at Meadowbrook Business Estate before dispatch. No batch production shortcuts.</p></div>
+        </div>
+    </div>
+    <div class="tab-panel" id="tab-compat">
+        <table class="specs-table">
+            <tr><td>Axle Standard</td><td>12x100mm (front) / 12x142mm (rear) &mdash; thru-axle</td></tr>
+            <tr><td>Brake Standard</td><td>Centre-Lock disc</td></tr>
+            <tr><td>Freehub Body</td><td>Shimano HG 11/12-speed (standard) &nbsp;&bull;&nbsp; SRAM XDR on request</td></tr>
+            <tr><td>Tyre Width</td><td>25mm &ndash; 35mm recommended</td></tr>
+            <tr><td>Tyre Type</td><td>Clincher or Tubeless</td></tr>
+            <tr><td>Cassette</td><td>Shimano / SRAM 8&ndash;12sp, Campagnolo on request</td></tr>
+            <tr><td>Rotor Size</td><td>140mm or 160mm centre-lock</td></tr>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<footer>
+    <div class="footer-logo">Plus Aero</div>
+    <p>&copy; 2026 Plus Aero Wheelsets &nbsp;&bull;&nbsp; 983 Meadowbrook Business Estate, Olivedale, Johannesburg</p>
+    <p style="margin-top:8px;">
+        <a href="https://wa.me/27838821308" style="color:#FF6600;text-decoration:none;">WhatsApp: 083 882 1308</a>
+        &nbsp;&bull;&nbsp;<a href="tel:+27101403877" style="color:#888;text-decoration:none;">010 140 3877</a>
+    </p>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('mNav').classList.toggle('active')}
+function setImage(src,el){var img=document.getElementById('mainImg');img.classList.add('fade');setTimeout(function(){img.src=src;img.classList.remove('fade');},200);document.querySelectorAll('.thumb').forEach(function(t){t.classList.remove('active')});el.classList.add('active')}
+var variants={white:['esl-white.jpg', 'esl-detail.jpg', 'esl-spoke.jpg', 'esl-lifestyle.jpg'],black:['esl-black.jpg', 'esl-black-detail.jpg', 'esl-black-spoke.jpg', 'esl-black-lifestyle.jpg']};
+function switchVariant(c,btn){var imgs=variants[c];var thumbs=document.querySelectorAll('.thumb');thumbs.forEach(function(t,i){t.querySelector('img').src=imgs[i]||imgs[0];t.onclick=(function(idx){return function(){setImage(imgs[idx]||imgs[0],t)}})(i)});setImage(imgs[0],thumbs[0]);document.querySelectorAll('.colour-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active')}
+function calcTotal(){var b=16500;document.querySelectorAll('[id^="upg-"]').forEach(function(c){if(c.checked)b+=1000});document.getElementById('detailTotal').textContent='R'+b.toLocaleString()}
+function switchTab(id,btn){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active')}
+</script>
+</body>
+</html>
