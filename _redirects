@@ -1,37 +1,35 @@
 # Plus Aero — Cloudflare Pages redirects
-# Converted from .htaccess
+# Updated Sep 28: Cloudflare Pages auto-redirects .html -> extensionless (clean URLs).
+# Rules that send extensionless back to .html create infinite loops. All destinations must be extensionless.
 
-# Old extension-less category URLs
-/road /road.html 301
-/road-1 /road.html 301
-/gravel /gravel.html 301
-/gravel-1 /gravel.html 301
-/mtb /mtb.html 301
-/mtb-1 /mtb.html 301
-/goblin /goblin.html 301
-/goblin-1 /goblin.html 301
-/components /components.html 301
-/components-1 /components.html 301
-/workshop /workshop.html 301
-/workshop-1 /workshop.html 301
-/support /support.html 301
-/contact /support.html 301
-/contact-us /support.html 301
+# Old Wix numbered URLs
+/road-1 /road 301
+/gravel-1 /gravel 301
+/mtb-1 /mtb 301
+/goblin-1 /goblin 301
+/components-1 /components 301
+/workshop-1 /workshop 301
+
+# Old contact/about URLs
+/contact /support 301
+/contact-us /support 301
 /about / 301
 /about-us / 301
-/qo /qocranks.html 301
-/qo-cranks /qocranks.html 301
-/qocranks /qocranks.html 301
-/basement-983 /basement983.html 301
-/basement983 /basement983.html 301
+
+# Old QO URLs
+/qo /qocranks 301
+/qo-cranks /qocranks 301
+
+# Old Basement 983 URL
+/basement-983 /basement983 301
 
 # Old Wix shop/category shells
 /shop/* / 301
 /category/* / 301
 
 # Discontinued product
-/vsl-40 /road.html 301
-/vsl40 /road.html 301
+/vsl-40 /road 301
+/vsl40 /road 301
 
 # Old Wix blog URLs
 /blog/* / 301
