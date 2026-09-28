@@ -15,573 +15,59 @@
     <meta property="og:site_name" content="Plus Aero Wheelsets">
     <title>MTB Wheelsets | XSL XCO · ESL | Plus Aero</title>
     <style>
-/* ============================================================
-   PLUS AERO &mdash; MASTER STYLESHEET
-   Single file. Replaces all previous CSS files.
-   ============================================================ */
-
-:root {
-    --orange: #FF6600;
-    --black: #000000;
-    --dark: #080808;
-    --mid: #111111;
-    --border: #222222;
-    --text-dim: #888888;
-    --white: #ffffff;
-}
-
+:root { --orange: #FF6600; --black: #000000; --dark: #080808; --mid: #111111; --border: #222222; --text-dim: #888888; --white: #ffffff; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-/* ============================================================
-   MASTER NAV
-   ============================================================ */
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba(0,0,0,0.95);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    box-sizing: border-box;
-    border-bottom: 1px solid var(--border);
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--white);
-    text-decoration: none;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
+body { background-color: var(--black); color: var(--white); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow-x: hidden; }
+header { position: fixed; top: 0; width: 100%; height: 70px; background: rgba(0,0,0,0.95); z-index: 9999; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; box-sizing: border-box; border-bottom: 1px solid var(--border); }
+.logo { font-size: 22px; font-weight: 900; color: var(--white); text-decoration: none; letter-spacing: 3px; text-transform: uppercase; }
 .logo span { color: var(--orange); }
-
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-left: 24px;
-    transition: color 0.2s;
-}
-
+nav a { color: var(--white); text-decoration: none; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-left: 24px; transition: color 0.2s; }
 nav a:hover { color: var(--orange); }
-
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--white);
-    transition: 0.3s;
-}
-
-/* MOBILE NAV OVERLAY */
-.mobile-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--black);
-    z-index: 10000;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.hamburger span { display: block; width: 25px; height: 2px; background: var(--white); transition: 0.3s; }
+.mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--black); z-index: 10000; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
 .mobile-nav.active { display: flex; }
-
-.mobile-nav a {
-    color: var(--white);
-    font-size: 28px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 3px;
-    transition: color 0.2s;
-}
-
+.mobile-nav a { color: var(--white); font-size: 28px; font-weight: 900; text-transform: uppercase; text-decoration: none; letter-spacing: 3px; transition: color 0.2s; }
 .mobile-nav a:hover { color: var(--orange); }
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 5%;
-    font-size: 40px;
-    cursor: pointer;
-    color: var(--white);
-    line-height: 1;
-}
-
-/* ============================================================
-   HERO SECTIONS
-   ============================================================ */
-
-.page-hero {
-    height: 56vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-    position: relative;
-}
-
-.page-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.hero-text h1 {
-    font-size: clamp(40px, 8vw, 90px);
-    font-weight: 900;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    color: var(--white);
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.hero-text p {
-    font-size: 13px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #222;
-    margin-top: 12px;
-}
-
-/* INDEX HERO */
-.index-hero {
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 7%;
-    margin-top: 70px;
-    position: relative;
-}
-
-.index-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.1));
-}
-
-.index-hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.index-hero-content p {
-    font-size: 12px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 20px;
-}
-
-.index-hero-content h1 {
-    font-size: clamp(48px, 8vw, 100px);
-    font-weight: 900;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.index-hero-content h1 span { color: var(--orange); }
-
-/* ============================================================
-   TECH BAR
-   ============================================================ */
-
-.tech-bar {
-    background: var(--orange);
-    display: flex;
-    justify-content: space-around;
-    padding: 25px 5%;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
+.close-btn { position: absolute; top: 20px; right: 5%; font-size: 40px; cursor: pointer; color: var(--white); line-height: 1; }
+.page-hero { height: 56vh; width: 100%; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; margin-top: 70px; position: relative; }
+.page-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)); }
+.hero-text { position: relative; z-index: 2; text-align: center; }
+.hero-text h1 { font-size: clamp(40px, 8vw, 90px); font-weight: 900; letter-spacing: 12px; text-transform: uppercase; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+.hero-text p { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #222; margin-top: 12px; }
+.tech-bar { background: var(--orange); display: flex; justify-content: space-around; padding: 25px 5%; flex-wrap: wrap; gap: 20px; }
 .tech-item { text-align: center; }
-
-.tech-item h4 {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 2px;
-}
-
-.tech-item p {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.8);
-    margin-top: 4px;
-}
-
-/* ============================================================
-   INDEX CATEGORY GRID
-   ============================================================ */
-
-.grid-section {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.cat-card {
-    width: 50%;
-    height: 500px;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding: 40px;
-    background-size: cover;
-    background-position: center;
-    background-color: var(--mid);
-    text-decoration: none;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.cat-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.1));
-    transition: 0.4s;
-}
-
-.cat-card:hover::after {
-    background: linear-gradient(to top, rgba(255,102,0,0.7) 0%, rgba(0,0,0,0.3));
-}
-
-.cat-content {
-    position: relative;
-    z-index: 2;
-}
-
-.cat-content p {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--orange);
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.cat-content h2 {
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--white);
-    text-transform: uppercase;
-    line-height: 1;
-}
-
-/* ============================================================
-   PRODUCT CARDS (ROAD / GRAVEL / MTB)
-   ============================================================ */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2px;
-    padding: 2px;
-    background: var(--border);
-}
-
-.product-card {
-    background: var(--dark);
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
+.tech-item h4 { font-size: 24px; font-weight: 900; color: var(--white); letter-spacing: 2px; }
+.tech-item p { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.8); margin-top: 4px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2px; padding: 2px; background: var(--border); }
+.product-card { background: var(--dark); position: relative; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 .product-card:hover { transform: translateY(-6px); }
-
-.card-img {
-    width: 100%;
-    height: 600px;
-    background-color: var(--mid);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s;
-}
-
+.card-img { width: 100%; height: 600px; background-color: var(--mid); background-size: cover; background-position: center; position: relative; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
 .product-card:hover .card-img img { transform: scale(1.06); }
-
-/* Orange fade overlay on card image */
-.card-img::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background: linear-gradient(transparent, rgba(255,102,0,0.15));
-    pointer-events: none;
-}
-
+.card-img::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(transparent, rgba(255,102,0,0.15)); pointer-events: none; }
 .card-info { padding: 28px; }
-
-.card-info h3 {
-    font-size: 22px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--white);
-    margin-bottom: 8px;
-    border-left: 4px solid var(--orange);
-    padding-left: 12px;
-}
-
-.card-specs {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--text-dim);
-    line-height: 2;
-    margin-bottom: 20px;
-}
-
+.card-info h3 { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--white); margin-bottom: 8px; border-left: 4px solid var(--orange); padding-left: 12px; }
+.card-specs { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); line-height: 2; margin-bottom: 20px; }
 .card-specs b { color: var(--orange); }
-
-/* PRICE CALCULATOR */
-.price-calc {
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
-}
-
-.base-price {
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--white);
-    margin-bottom: 16px;
-}
-
-.base-price span {
-    font-size: 13px;
-    color: var(--text-dim);
-    font-weight: 400;
-    margin-left: 8px;
-}
-
+.price-calc { border-top: 1px solid var(--border); padding-top: 20px; }
+.base-price { font-size: 30px; font-weight: 900; color: var(--white); margin-bottom: 16px; }
+.base-price span { font-size: 13px; color: var(--text-dim); font-weight: 400; margin-left: 8px; }
 .upgrade-options { margin-bottom: 16px; }
-
-.upgrade-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.upgrade-option input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--orange);
-    cursor: pointer;
-}
-
-.upgrade-option label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #aaa;
-    cursor: pointer;
-    flex: 1;
-}
-
-.upgrade-option .upgrade-price {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--orange);
-}
-
-.total-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    margin-top: 8px;
-}
-
-.total-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-dim);
-}
-
-.total-price {
-    font-size: 26px;
-    font-weight: 900;
-    color: var(--orange);
-}
-
-.btn-order {
-    display: block;
-    width: 100%;
-    background: var(--orange);
-    color: var(--white);
-    text-align: center;
-    padding: 14px;
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    margin-top: 16px;
-    transition: background 0.2s;
-}
-
+.upgrade-option { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer; }
+.upgrade-option input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--orange); cursor: pointer; }
+.upgrade-option label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #aaa; cursor: pointer; flex: 1; }
+.upgrade-option .upgrade-price { font-size: 12px; font-weight: 700; color: var(--orange); }
+.total-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 8px; }
+.total-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }
+.total-price { font-size: 26px; font-weight: 900; color: var(--orange); }
+.btn-order { display: block; width: 100%; background: var(--orange); color: var(--white); text-align: center; padding: 14px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; margin-top: 16px; transition: background 0.2s; }
 .btn-order:hover { background: var(--white); color: var(--black); }
-
-/* ============================================================
-   NARRATIVE / INFO BLOCKS
-   ============================================================ */
-
-.narrative {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 80px 5%;
-    gap: 40px;
-    background: var(--dark);
-    border-top: 1px solid var(--border);
-}
-
-.n-block { flex: 1; min-width: 220px; }
-
-.n-block h3 {
-    font-size: 14px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--orange);
-    margin-bottom: 16px;
-}
-
-.n-block p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text-dim);
-}
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-
-.btn-orange {
-    display: inline-block;
-    background: var(--orange);
-    color: var(--white);
-    padding: 14px 28px;
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.btn-orange:hover { background: var(--white); color: var(--black); }
-
-.basement-cta {
-    text-align: center;
-    padding: 60px 5%;
-    background: var(--black);
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-footer {
-    background: var(--dark);
-    border-top: 1px solid var(--border);
-    padding: 40px 5%;
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 12px;
-}
-
-footer p {
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 1px;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-@media (max-width: 768px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .cat-card { width: 100%; height: 320px; }
-    .page-hero { height: 50vh; }
-    .index-hero { height: 80vh; }
-    .product-grid { grid-template-columns: 1fr; }
-    .tech-bar { justify-content: center; }
-    .hero-text h1 { letter-spacing: 6px; }
-}
-
-</style>
+footer { background: var(--dark); border-top: 1px solid var(--border); padding: 40px 5%; text-align: center; }
+.footer-logo { font-size: 20px; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; color: var(--white); margin-bottom: 12px; }
+footer p { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+@media (max-width: 768px) { nav { display: none; } .hamburger { display: flex; } .page-hero { height: 50vh; } .product-grid { grid-template-columns: 1fr; } .tech-bar { justify-content: center; } .hero-text h1 { letter-spacing: 6px; } }
+    </style>
     <style>
         .colour-toggle { display:flex; gap:10px; margin-bottom:16px; }
         .colour-btn { flex:1; padding:8px; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:1.5px; cursor:pointer; border:2px solid #333; background:transparent; color:#888; transition:0.2s; }
@@ -635,13 +121,11 @@ footer p {
 </div>
 
 <div class="product-grid">
-
-    <!-- XSL XCO -->
     <div class="product-card">
         <div class="card-img" id="img-xslxco" style="background-color:#111; background-image:url('xsl-xco-white.jpg'); background-size:cover; background-position:center;"></div>
         <div class="card-info">
             <h3>XSL XCO</h3>
-            <p class="card-specs"><b>Hub:</b> Standard XCL Paul Hub &nbsp;|&nbsp; <b>Weight:</b> 1,200g<br><b>Brake:</b> Disc Centre-Lock &nbsp;|&nbsp; Tubeless Ready<br><b>Carbon:</b> Toray T1100 &nbsp;|&nbsp; Sapim CX-Ray Spokes</p>
+            <p class="card-specs"><b>Hub:</b> Standard XCL Paul Hub &nbsp;|&nbsp; <b>Weight:</b> 1,200g<br><b>Brake:</b> Disc Centre-Lock &nbsp;|&nbsp; Tubeless Ready<br><b>Carbon:</b> Toray T1100 &nbsp;|&nbsp; Alpina Extra Lite</p>
             <div class="colour-toggle">
                 <button class="colour-btn active" onclick="swapColour('xslxco','white',this)">White Branding</button>
                 <button class="colour-btn" onclick="swapColour('xslxco','black',this)">Black Branding</button>
@@ -668,8 +152,6 @@ footer p {
             </div>
         </div>
     </div>
-
-    <!-- ESL -->
     <div class="product-card">
         <div class="card-img" id="img-esl" style="background-color:#111; background-image:url('esl-white.jpg'); background-size:cover; background-position:center;"></div>
         <div class="card-info">
@@ -692,7 +174,6 @@ footer p {
             </div>
         </div>
     </div>
-
 </div>
 
 <footer>
@@ -717,7 +198,7 @@ function calcPrice(prefix, base) {
     document.getElementById(prefix + '-total').textContent = 'R' + total.toLocaleString();
 }
 function swapColour(prefix, colour, btn) {
-    document.getElementById('img-' + prefix).style.backgroundImage = "url('" + prefix + "-" + colour + ".jpg')";
+    var imgMap={'xslxco':'xsl-xco','esl':'esl'}; var imgPrefix=imgMap[prefix]||prefix;     document.getElementById('img-' + prefix).style.backgroundImage = "url('" + imgPrefix + "-" + colour + ".jpg')";
     btn.closest('.colour-toggle').querySelectorAll('.colour-btn').forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
 }
