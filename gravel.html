@@ -39,10 +39,10 @@ nav a:hover { color:var(--orange); }
 .tech-item { text-align:center; }
 .tech-item h4 { font-size:24px; font-weight:900; color:var(--white); letter-spacing:2px; }
 .tech-item p { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.8); margin-top:4px; }
-.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; padding:2px; background:var(--border); }
+.product-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2px; padding:2px; background:var(--border); }
 .product-card { background:var(--dark); position:relative; overflow:hidden; transition:0.4s cubic-bezier(0.165,0.84,0.44,1); }
 .product-card:hover { transform:translateY(-6px); }
-.card-img { width:100%; aspect-ratio:10/7; background-color:var(--mid); background-size:cover; background-position:center; overflow:hidden; }
+.card-img { width:100%; aspect-ratio:4/3; background-color:var(--mid); background-size:cover; background-position:center; overflow:hidden; }
 .card-info { padding:28px; }
 .card-info h3 { font-size:22px; font-weight:900; text-transform:uppercase; letter-spacing:2px; color:var(--white); margin-bottom:8px; border-left:4px solid var(--orange); padding-left:12px; }
 .card-specs { font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-dim); line-height:2; margin-bottom:20px; }

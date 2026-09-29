@@ -39,10 +39,10 @@ nav a:hover { color: var(--orange); }
 .tech-item { text-align: center; }
 .tech-item h4 { font-size: 24px; font-weight: 900; color: var(--white); letter-spacing: 2px; }
 .tech-item p { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.8); margin-top: 4px; }
-.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 2px; background: var(--border); }
+.product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; padding: 2px; background: var(--border); }
 .product-card { background: var(--dark); position: relative; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 .product-card:hover { transform: translateY(-6px); }
-.card-img { width: 100%; aspect-ratio: 10 / 7; background-color: var(--mid); background-size: cover; background-position: center; overflow: hidden; }
+.card-img { width: 100%; aspect-ratio: 4 / 3; background-color: var(--mid); background-size: cover; background-position: center; overflow: hidden; }
 .card-info { padding: 28px; }
 .card-info h3 { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--white); margin-bottom: 8px; border-left: 4px solid var(--orange); padding-left: 12px; }
 .card-specs { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); line-height: 2; margin-bottom: 20px; }
@@ -135,22 +135,22 @@ footer p { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
             <h3>AXL 24H Elliptical Aero</h3>
             <p class="card-specs"><b>Depth:</b> 50mm &nbsp;|&nbsp; <b>Spokes:</b> Alpina Hyper Lite 3.4g<br><b>Nipples:</b> AGS Lock Internal 14G &nbsp;|&nbsp; <b>Weight:</b> 1,190g<br><b>Hub:</b> RS240 or RS180SL &nbsp;|&nbsp; <b>Brake:</b> Disc Centre-Lock<br><b>Carbon:</b> Toray T1100 &nbsp;|&nbsp; Tubeless Ready</p>
             <div class="price-calc">
-                <div class="base-price">R22,000 <span>base price</span></div>
+                <div class="base-price">R24,000 <span>base price</span></div>
                 <div class="upgrade-options">
                     <div class="upgrade-option">
-                        <input type="checkbox" id="axl24h-rs180" onchange="calcPrice('axl24h',22000)">
+                        <input type="checkbox" id="axl24h-rs180" onchange="calcPrice('axl24h',24000)">
                         <label for="axl24h-rs180">RS180 Hub Upgrade (lighter)</label>
                         <span class="upgrade-price">+R1,000</span>
                     </div>
                     <div class="upgrade-option">
-                        <input type="checkbox" id="axl24h-ratchet" onchange="calcPrice('axl24h',22000)">
+                        <input type="checkbox" id="axl24h-ratchet" onchange="calcPrice('axl24h',24000)">
                         <label for="axl24h-ratchet">60T Conical Ratchet Hub Upgrade</label>
                         <span class="upgrade-price">+R1,000</span>
                     </div>
                 </div>
                 <div class="total-row">
                     <span class="total-label">Your Total</span>
-                    <span class="total-price" id="axl24h-total">R22,000</span>
+                    <span class="total-price" id="axl24h-total">R24,000</span>
                 </div>
                 <a href="axl-24.html" class="btn-order btn-specs">View Full Specs</a>
                 <a href="https://wa.me/27838821308?text=Hi%2C%20I%27m%20interested%20in%20the%20AXL%2024H%20Elliptical%20Aero%20wheelset" class="btn-order">Order via WhatsApp</a>
@@ -189,7 +189,7 @@ footer p { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
         <div class="card-img" style="background-image:url('rsl-50-hero-black.jpg');"></div>
         <div class="card-info">
             <h3>RSL 50mm V2</h3>
-            <p class="card-specs"><b>Depth:</b> 50mm &nbsp;|&nbsp; <b>Spokes:</b> Alpina Extra Lite 4.4g<br><b>Nipples:</b> AGS Lock Internal &nbsp;|&nbsp; <b>Weight:</b> 1,290g<br><b>Hub:</b> RS240SL or RS180SL<br><b>Brake:</b> Disc Centre-Lock &nbsp;|&nbsp; <b>Carbon:</b> Toray T800<br>Tubeless Ready</p>
+            <p class="card-specs"><b>Depth:</b> 50mm &nbsp;|&nbsp; <b>Spokes:</b> Alpina Extra Lite 4.4g<br><b>Nipples:</b> AGS Lock Internal &nbsp;|&nbsp; <b>Weight:</b> 1,280g<br><b>Hub:</b> RS240SL or RS180SL<br><b>Brake:</b> Disc Centre-Lock &nbsp;|&nbsp; <b>Carbon:</b> Toray T800<br>Tubeless Ready</p>
             <div class="price-calc">
                 <div class="base-price">R18,000 <span>base price</span></div>
                 <div class="upgrade-options">
