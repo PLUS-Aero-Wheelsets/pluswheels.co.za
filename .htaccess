@@ -1,0 +1,29 @@
+RewriteEngine On
+
+# Use the non-www address everywhere while preserving the requested path.
+RewriteCond %{HTTP_HOST} ^www\.pluswheels\.co\.za$ [NC]
+RewriteRule ^ https://pluswheels.co.za%{REQUEST_URI} [R=301,L]
+
+# Previous website URLs retained for visitors and search engines.
+RewriteRule ^road-1/?$ /road.html [R=301,L]
+RewriteRule ^gravel-1/?$ /gravel.html [R=301,L]
+RewriteRule ^mtb-1/?$ /mtb.html [R=301,L]
+RewriteRule ^goblin-1/?$ /goblin.html [R=301,L]
+RewriteRule ^components-1/?$ /components.html [R=301,L]
+RewriteRule ^workshop-1/?$ /workshop.html [R=301,L]
+
+RewriteRule ^contact/?$ /support.html [R=301,L]
+RewriteRule ^contact-us/?$ /support.html [R=301,L]
+RewriteRule ^about/?$ / [R=301,L]
+RewriteRule ^about-us/?$ / [R=301,L]
+
+RewriteRule ^qo/?$ /qocranks.html [R=301,L]
+RewriteRule ^qo-cranks/?$ /qocranks.html [R=301,L]
+RewriteRule ^basement-983/?$ /basement983.html [R=301,L]
+
+RewriteRule ^shop(?:/.*)?$ / [R=301,L]
+RewriteRule ^category(?:/.*)?$ / [R=301,L]
+RewriteRule ^blog(?:/.*)?$ / [R=301,L]
+
+RewriteRule ^vsl-40/?$ /road.html [R=301,L]
+RewriteRule ^vsl40/?$ /road.html [R=301,L]

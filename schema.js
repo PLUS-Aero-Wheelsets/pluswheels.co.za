@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var BASE = 'https://www.pluswheels.co.za';
+  var BASE = 'https://pluswheels.co.za';
   var path = window.location.pathname.replace(/\.html$/,'').replace(/\/$/,'') || '/';
   var slug = path === '/' ? 'index' : path.split('/').pop();
 
@@ -36,8 +36,8 @@
     alternateName:'PLUS Aero Bicycle Wheels and Components',
     description:'Hand-built carbon wheelsets, QO Bike Components distributor, and precision bearings for road, gravel and MTB. Built in Johannesburg, South Africa.',
     url:BASE,
-    logo:BASE+'/plus-logo.png',
-    image:BASE+'/plus-logo.png',
+    logo:BASE+'/logo-plus.png',
+    image:BASE+'/logo-plus.png',
     telephone:'+27-83-882-1308',
     email:'info@pluswheels.co.za',
     priceRange:'R R R R',
@@ -109,7 +109,7 @@
       var img = card.querySelector('.card-img');
       var imgStyle = img ? img.getAttribute('style') || '' : '';
       var imgMatch = imgStyle.match(/url\(['"]?([^'"\)]+)['"]?\)/);
-      var imgUrl = imgMatch ? (imgMatch[1].indexOf('http')===0 ? imgMatch[1] : BASE+'/'+imgMatch[1]) : BASE+'/plus-logo.png';
+      var imgUrl = imgMatch ? (imgMatch[1].indexOf('http')===0 ? imgMatch[1] : BASE+'/'+imgMatch[1]) : BASE+'/logo-plus.png';
       items.push({
         '@type':'ListItem',
         position:i+1,
@@ -177,16 +177,16 @@
   }
 
   /* ---- 7. Product schema on static product detail pages ---- */
-  var productSlugs = ['axl-20','axl-24','csl','rsl-50','rsl-40','gsl','gsl-r','gsl-v2','xsl-xco','esl'];
+  var productSlugs = ['axl-20','axl-24','csl','rsl-50','rsl-40','gsl','gsl-54','gsl-r','xsl-xco','esl','vsl-50'];
   if (productSlugs.indexOf(slug) > -1) {
     var pName = text('h1') || text('.detail-info h1') || slug.toUpperCase();
-    var pPrice = priceFromText(text('.base-price') || text('.detail-price') || '');
+    var pPrice = priceFromText(text('.base-price') || text('.detail-price') || text('.specs-brief') || '');
     var pImg = (function(){
-      var img = document.querySelector('.detail-img');
-      if (img) { var s = img.getAttribute('style')||''; var m = s.match(/url\(['"]?([^'"\)]+)['"]?\)/); if (m) return m[1].indexOf('http')===0 ? m[1] : BASE+'/'+m[1]; }
+      var img = document.querySelector('.product-image img');
+      if (img) { var s = img.getAttribute('src')||''; if (s) return s.indexOf('http')===0 ? s : BASE+'/'+s; }
       var card = document.querySelector('.card-img');
       if (card) { var s2 = card.getAttribute('style')||''; var m2 = s2.match(/url\(['"]?([^'"\)]+)['"]?\)/); if (m2) return m2[1].indexOf('http')===0 ? m2[1] : BASE+'/'+m2[1]; }
-      return BASE+'/plus-logo.png';
+      return BASE+'/logo-plus.png';
     })();
     inject({
       '@context':'https://schema.org',
